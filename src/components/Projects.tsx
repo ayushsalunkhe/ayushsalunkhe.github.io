@@ -1,4 +1,4 @@
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { ExternalLink, Github, Star, Award, Trophy, Users, Eye } from 'lucide-react'
 import Tilt from 'react-parallax-tilt'
 import { useState } from 'react'
