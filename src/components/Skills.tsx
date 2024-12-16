@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Code2, Layout, Server, Database, Brush, Workflow } from 'lucide-react'
+import { Layout, Server, Workflow } from 'lucide-react'
 
 const Skills = () => {
   const skillCategories = [
