@@ -48,16 +48,16 @@ const Contact = () => {
     }
 }
 
-  const testimonials = [
-    {
-      text: "Ayush is a fantastic developer! His attention to detail and problem-solving skills are outstanding.",
-      author: "Tech Lead, Fortune 500 Company"
-    },
-    {
-      text: "Working with Ayush was a game-changer for our project. Highly recommended!",
-      author: "Startup Founder"
-    }
-  ]
+  // const testimonials = [
+  //   {
+  //     text: "Ayush is a fantastic developer! His attention to detail and problem-solving skills are outstanding.",
+  //     author: "Tech Lead, Fortune 500 Company"
+  //   },
+  //   {
+  //     text: "Working with Ayush was a game-changer for our project. Highly recommended!",
+  //     author: "Startup Founder"
+  //   }
+  // ]
 
   return (
     <section id="contact" className="min-h-screen py-20 relative bg-gradient-to-b from-black via-violet-950/20 to-black overflow-hidden">
