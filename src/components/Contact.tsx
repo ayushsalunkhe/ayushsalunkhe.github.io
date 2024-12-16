@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from 'framer-motion'
-import { Mail, Github, Linkedin, MapPin, Clock, Calendar, Coffee, Sparkles, ArrowRight, Phone, Send, AlertCircle, CheckCircle2 } from 'lucide-react'
+import { Mail, Github, Linkedin, MapPin, Clock, Calendar, Coffee, Sparkles, Phone, Send, AlertCircle, CheckCircle2 } from 'lucide-react'
 import { useState } from 'react'
 import axios from 'axios'
 
@@ -13,11 +13,11 @@ const Contact = () => {
   })
   const [errorMessage, setErrorMessage] = useState('')
 
-  const socialLinks = [
-    { icon: <Github size={24} />, href: "https://github.com/ayushsalunkhe", label: "GitHub", color: "hover:bg-gray-800" },
-    { icon: <Linkedin size={24} />, href: "https://www.linkedin.com/in/ayush-salunkhe-4aa86b280/", label: "LinkedIn", color: "hover:bg-blue-600" },
-    { icon: <Mail size={24} />, href: "mailto:ayush.salunkhe7371@gmail.com", label: "Email", color: "hover:bg-red-600" }
-  ]
+  // const socialLinks = [
+  //   { icon: <Github size={24} />, href: "https://github.com/ayushsalunkhe", label: "GitHub", color: "hover:bg-gray-800" },
+  //   { icon: <Linkedin size={24} />, href: "https://www.linkedin.com/in/ayush-salunkhe-4aa86b280/", label: "LinkedIn", color: "hover:bg-blue-600" },
+  //   { icon: <Mail size={24} />, href: "mailto:ayush.salunkhe7371@gmail.com", label: "Email", color: "hover:bg-red-600" }
+  // ]
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
