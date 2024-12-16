@@ -28,30 +28,31 @@ const Contact = () => {
     }))
   }
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setFormStatus('sending')
-    setErrorMessage('')
+const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault()
+  setFormStatus('sending')
+  setErrorMessage('')
 
-    try {
-      await axios.post('http://localhost:5000/api/contact', formData)
-      setFormStatus('sent')
-      setFormData({ name: '', email: '', message: '' })
-      setTimeout(() => setFormStatus('idle'), 3000)
-    } catch (error) {
-      console.error('Error sending message:', error)
+  try {
+    await axios.post('http://localhost:5000/api/contact', formData)
+    setFormStatus('sent')
+    setFormData({ name: '', email: '', message: '' })
+    setTimeout(() => setFormStatus('idle'), 3000)
+  } catch (error) {
+    console.error('Error sending message:', error)
 
-      // Cast error as AxiosError
-      const axiosError = error as AxiosError
+    // Ensure error is cast to AxiosError
+    const axiosError = error as AxiosError<any>
 
-      // Safely access response.data.error if it exists
-      setFormStatus('error')
-      setErrorMessage(
-        axiosError.response?.data?.error || 'Failed to send message. Please try again.'
-      )
-      setTimeout(() => setFormStatus('idle'), 3000)
-    }
+    // Safely access response.data.error if it exists
+    setFormStatus('error')
+    setErrorMessage(
+      axiosError.response?.data?.error || 'Failed to send message. Please try again.'
+    )
+    setTimeout(() => setFormStatus('idle'), 3000)
   }
+}
+
 
   // const testimonials = [
   //   {
