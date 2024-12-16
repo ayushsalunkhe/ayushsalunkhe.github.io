@@ -1,7 +1,8 @@
 import { motion, AnimatePresence } from 'framer-motion'
-import { Mail, Github, Linkedin, MapPin, Clock, Calendar, Coffee, Sparkles, Phone, Send, AlertCircle, CheckCircle2 } from 'lucide-react'
+import { Mail, MapPin, Clock, Calendar, Coffee, Sparkles, Phone, Send, AlertCircle, CheckCircle2 } from 'lucide-react'
 import { useState } from 'react'
 import axios from 'axios'
+import { AxiosError } from 'axios'
 
 const Contact = () => {
   const [formStatus, setFormStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle')
@@ -40,10 +41,12 @@ const Contact = () => {
     } catch (error) {
       console.error('Error sending message:', error)
       setFormStatus('error')
-      setErrorMessage(error.response?.data?.error || 'Failed to send message. Please try again.')
+      // Type assertion to handle the AxiosError type
+      const axiosError = error as AxiosError
+      setErrorMessage(axiosError.response?.data?.error || 'Failed to send message. Please try again.')
       setTimeout(() => setFormStatus('idle'), 3000)
     }
-  }
+}
 
   const testimonials = [
     {
