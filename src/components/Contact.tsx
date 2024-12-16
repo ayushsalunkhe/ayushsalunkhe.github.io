@@ -43,7 +43,7 @@ try {
     setFormStatus('error')
     // Cast error to AxiosError to make TypeScript aware of the 'response' property
     const axiosError = error as AxiosError
-    setErrorMessage(axiosError.response?.data?.error || 'Failed to send message. Please try again.')
+    setErrorMessage(AxiosError.response?.data?.error || 'Failed to send message. Please try again.')
     setTimeout(() => setFormStatus('idle'), 3000)
   }
 }
