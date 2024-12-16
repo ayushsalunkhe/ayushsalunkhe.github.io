@@ -33,20 +33,25 @@ const Contact = () => {
     setFormStatus('sending')
     setErrorMessage('')
 
-try {
-    await axios.post('http://localhost:5000/api/contact', formData)
-    setFormStatus('sent')
-    setFormData({ name: '', email: '', message: '' })
-    setTimeout(() => setFormStatus('idle'), 3000)
-  } catch (error) {
-    console.error('Error sending message:', error)
-    setFormStatus('error')
-    // Cast error to AxiosError to make TypeScript aware of the 'response' property
-    const axiosError = error as AxiosError
-    setErrorMessage(AxiosError.response?.data?.error || 'Failed to send message. Please try again.')
-    setTimeout(() => setFormStatus('idle'), 3000)
+    try {
+      await axios.post('http://localhost:5000/api/contact', formData)
+      setFormStatus('sent')
+      setFormData({ name: '', email: '', message: '' })
+      setTimeout(() => setFormStatus('idle'), 3000)
+    } catch (error) {
+      console.error('Error sending message:', error)
+
+      // Cast error as AxiosError
+      const axiosError = error as AxiosError
+
+      // Safely access response.data.error if it exists
+      setFormStatus('error')
+      setErrorMessage(
+        axiosError.response?.data?.error || 'Failed to send message. Please try again.'
+      )
+      setTimeout(() => setFormStatus('idle'), 3000)
+    }
   }
-}
 
   // const testimonials = [
   //   {
