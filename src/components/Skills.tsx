@@ -65,25 +65,25 @@ const Skills = () => {
       })
 
       // Animate skill categories
-      skillCategories.forEach((_, index) => {
-        gsap.from(`.category-${index}`, {
-          x: index % 2 === 0 ? -100 : 100,
+      skillCategories.forEach((_, categoryIndex) => {
+        gsap.from(`.category-${categoryIndex}`, {
+          x: categoryIndex % 2 === 0 ? -100 : 100,
           opacity: 0,
           duration: 1,
           scrollTrigger: {
-            trigger: `.category-${index}`,
+            trigger: `.category-${categoryIndex}`,
             start: "top bottom-=50",
           }
         })
 
         // Animate skill cards
-        gsap.from(`.skill-card-${index}`, {
+        gsap.from(`.skill-card-${categoryIndex}`, {
           scale: 0.8,
           opacity: 0,
           duration: 0.5,
           stagger: 0.1,
           scrollTrigger: {
-            trigger: `.category-${index}`,
+            trigger: `.category-${categoryIndex}`,
             start: "top bottom-=50",
           }
         })
