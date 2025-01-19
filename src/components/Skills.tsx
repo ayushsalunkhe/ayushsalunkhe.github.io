@@ -117,7 +117,7 @@ const Skills = () => {
               </div>
 
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                {category.skills.map((skill, index) => (
+                {category.skills.map((skill) => (
                   <div
                     key={skill.name}
                     className={`group skill-card-${categoryIndex}`}
