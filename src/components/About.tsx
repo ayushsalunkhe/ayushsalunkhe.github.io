@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Code, GraduationCap, Briefcase, Brain, Target, Users, Lightbulb } from 'lucide-react'
+import { GraduationCap, Brain, Target, Users, Lightbulb } from 'lucide-react'
 
 const About = () => {
   const achievements = [
